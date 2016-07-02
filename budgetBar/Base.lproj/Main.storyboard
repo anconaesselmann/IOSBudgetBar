@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B38b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="budgetBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4E-Z3-iAd" customClass="BudgetBar" customModule="budgetBar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="108" width="560" height="99"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="GbC-0h-Isq"/>
+                                    <constraint firstAttribute="height" constant="99" id="ZKZ-mr-skf"/>
+                                    <constraint firstAttribute="height" constant="128" id="xf8-Mq-NfT"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barHeight">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="percentValue">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GbC-0h-Isq"/>
+                                        <exclude reference="xf8-Mq-NfT"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.5" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k10-Nu-OdT">
+                                <rect key="frame" x="20" y="215" width="42" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gth-o7-7aW">
+                                <rect key="frame" x="70" y="215" width="30" height="30"/>
+                                <state key="normal" title="set"/>
+                                <connections>
+                                    <action selector="setButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qx9-N0-XrD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="x4E-Z3-iAd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="88" id="0st-fS-1pp"/>
+                            <constraint firstItem="Gth-o7-7aW" firstAttribute="leading" secondItem="k10-Nu-OdT" secondAttribute="trailing" constant="8" id="CHU-5S-OC5"/>
+                            <constraint firstItem="Gth-o7-7aW" firstAttribute="top" secondItem="x4E-Z3-iAd" secondAttribute="bottom" constant="8" id="GFs-UN-WBE"/>
+                            <constraint firstItem="k10-Nu-OdT" firstAttribute="top" secondItem="x4E-Z3-iAd" secondAttribute="bottom" constant="8" id="Xho-Bc-gul"/>
+                            <constraint firstItem="k10-Nu-OdT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fph-C8-x1o"/>
+                            <constraint firstItem="x4E-Z3-iAd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kGX-6c-1ey"/>
+                            <constraint firstItem="x4E-Z3-iAd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qoe-9F-3BL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bar" destination="x4E-Z3-iAd" id="WJd-Js-gJC"/>
+                        <outlet property="percentTextField" destination="k10-Nu-OdT" id="FMO-JN-xrN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="372"/>
+        </scene>
+    </scenes>
+</document>
